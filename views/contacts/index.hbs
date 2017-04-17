@@ -12,7 +12,7 @@
   </div>
 
   <div class="class-md-6">
-    <h4><a href="/contacts/{{ this.id }}"></a>{{ this.first_name }} {{ this.last_name }}</h4>
+    <h4><a href="/contacts/{{ this.id }}">{{ this.first_name }} {{ this.last_name }}</a></h4>
     <p>Phone: {{ this.phone_number }}</p>
     <p>Email: {{ this.email_address }}</p>
     <p>Address: {{ this.line_1 }}</p>
@@ -21,20 +21,20 @@
     <p>Zip: {{ this.zip }}</p>
   </div>
 
-  <form action="/contact/{{ this.id }}/edit" method='GET'>
+  <form action="/contacts/{{ this.id }}/edit" method='GET'>
           <input
             class="btn btn-sm btn-danger"
             type="submit"
-            name="delete"
+            name="Edit"
             value="Edit Contact">
         </form>
 
-        <form action="/contact/{{ this.id }}?_method=DELETE" method="POST">
+        <form action="/contacts/{{ this.id }}?_method=DELETE" method="POST">
           <input
             class="btn btn-sm btn-danger"
             type="submit"
             name="delete"
-            value="Delete Movie">
+            value="Delete">
         </form>
 
 </div>
