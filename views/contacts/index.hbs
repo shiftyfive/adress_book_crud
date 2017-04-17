@@ -1,0 +1,41 @@
+<div class="container">
+
+  <h1>All Contacts</h1>
+
+<hr>
+
+{{#each contacts}}
+  <div class="row">
+    <div class="col-mid-2">
+      <img src="{{ this.image_url }}" alt="this.name">
+    </div>
+  </div>
+
+  <div class="class-md-6">
+    <h4><a href="/contacts/{{ this.id }}"></a>{{ this.first_name }} {{ this.last_name }}</h4>
+    <p>Phone: {{ this.phone_number }}</p>
+    <p>Email: {{ this.email_address }}</p>
+    <p>Address: {{ this.line_1 }}</p>
+    <p>{{ this.line_2 }}</p>
+    <p>City: {{ this.city }}</p>
+    <p>Zip: {{ this.zip }}</p>
+  </div>
+
+  <form action="/contact/{{ this.id }}/edit" method='GET'>
+          <input
+            class="btn btn-sm btn-danger"
+            type="submit"
+            name="delete"
+            value="Edit Contact">
+        </form>
+
+        <form action="/contact/{{ this.id }}?_method=DELETE" method="POST">
+          <input
+            class="btn btn-sm btn-danger"
+            type="submit"
+            name="delete"
+            value="Delete Movie">
+        </form>
+
+</div>
+{{/each}}
